@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
       heart.style.animationDuration = `${Math.random() * 5 + 3}s`; // Rastgele hız
       heart.style.fontSize = `${Math.random() * 3 + 2}em`; // Rastgele boyut
 
+      // Rastgele animasyon yönleri belirle
+      heart.style.setProperty('--random-x', `${Math.random() * 200 - 100}px`); // X yönü
+      heart.style.setProperty('--random-y', `${Math.random() * 200 - 100}px`); // Y yönü
+
       // Kalbi ekliyoruz
       heartsContainer.appendChild(heart);
     }
