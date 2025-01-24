@@ -13,14 +13,19 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.backgroundSize = "cover";  // Arkaplanın boyutunu kapsayacak şekilde ayarla
     document.body.style.backgroundPosition = "center"; // Ortalanmış arka plan
 
-    // Kalpleri ekranın her yerine yerleştir
-    for (let i = 0; i < 50; i++) {  // 50 tane kalp ekle
+    // Kalpleri ekranın her yerine yaymak için
+    for (let i = 0; i < 100; i++) {  // 100 tane kalp ekle
       const heart = document.createElement("div");
       heart.classList.add("heart");
       heart.textContent = "❤️";
-      heart.style.left = `${Math.random() * 100}vw`; // X konumunu rastgele
+
+      // Kalplerin rastgele pozisyonlarını belirliyoruz
+      heart.style.left = `${Math.random() * 100}vw`;  // X konumunu rastgele belirle (0-100% genişlik)
+      heart.style.top = `${Math.random() * 100}vh`;   // Y konumunu rastgele belirle (0-100% yükseklik)
       heart.style.animationDuration = `${Math.random() * 5 + 3}s`; // Rastgele hız
       heart.style.fontSize = `${Math.random() * 3 + 2}em`; // Rastgele boyut
+
+      // Kalbi ekliyoruz
       heartsContainer.appendChild(heart);
     }
 
@@ -29,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     soundCloudPlayer.contentWindow.postMessage('{"method":"play"}', '*');
   });
 });
+
 
 
 
