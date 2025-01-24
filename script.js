@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
   const gif = document.getElementById("birthday-gif");
   const birthdayMessage = document.getElementById("birthday-message");
-  const birthdayMusic = document.getElementById("birthday-music"); // Müzik elementine erişim
+  const soundCloudPlayer = document.querySelector("iframe"); // SoundCloud iframe'ini seçiyoruz
 
+  // GIF'e tıklama olayı
   gif.addEventListener("click", function () {
-    // Mesajı ve kalpleri göster
+    // Mesaj ve kalpleri göster
     birthdayMessage.style.display = "block";
-
-    // Müzik çalmaya başla
-    birthdayMusic.play();  // Müzik başlatılıyor
 
     // GIF'i değiştir
     gif.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzk5NXlmZW83Yjl1NWFtYzZlaDBrbWxxMjMwM2FwazFlMGZwN2czayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7n91oN4DySTNaNihfn/giphy.gif";
+
+    // SoundCloud müziğini başlat
+    soundCloudPlayer.contentWindow.postMessage('{"method":"play"}', '*'); // Müzik başlatılır
 
     // Kalpleri ve balonları rastgele hareket ettir
     let heartElements = document.querySelectorAll(".heart");
@@ -31,3 +32,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
