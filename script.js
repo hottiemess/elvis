@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mesaj ve kalpleri göster
     birthdayMessage.style.display = "block";
 
+    // Arka planı değiştirme
+    document.body.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/previews/026/942/434/large_2x/vivid-birthday-cake-background-free-photo.jpg')";
+    document.body.style.backgroundSize = "cover";  // Arkaplanın boyutunu kapsayacak şekilde ayarla
+    document.body.style.backgroundPosition = "center"; // Ortalanmış arka plan
+
     // Kalpleri ekranın her yerine yerleştir
     for (let i = 0; i < 50; i++) {  // 50 tane kalp ekle
       const heart = document.createElement("div");
@@ -24,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     soundCloudPlayer.contentWindow.postMessage('{"method":"play"}', '*');
   });
 });
+
 
 
 
