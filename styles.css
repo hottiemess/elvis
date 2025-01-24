@@ -84,13 +84,13 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 10;
+  z-index: 5; /* Kalpleri yazının altında tutmak için */
 }
 
 .heart {
   position: absolute;
   font-size: 3em;
-  opacity: 1;
+  opacity: 0.6; /* Kalpleri biraz şeffaf yapıyoruz */
   animation: float 5s forwards, confetti 3s ease-in-out infinite;
 }
 
@@ -120,11 +120,6 @@ body {
     transform: translate(var(--random-x), var(--random-y));
     opacity: 0;
   }
-}
-
-/* GIF'e tıklayınca kalpleri yaymak */
-.hidden {
-  display: none;
 }
 
 /* Konfeti ve kalp dağılma efektleri */
