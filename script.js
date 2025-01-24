@@ -26,11 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let balloonElements = document.querySelectorAll(".balloon");
     balloonElements.forEach(balloon => {
       const randomX = Math.random() * 200 - 100;
-      const randomY = Math.random() * 200 - 100;
-      balloon.style.setProperty('--random-x', `${randomX}px`);
-      balloon.style.setProperty('--random-y', `${randomY}px`);
-    });
-  });
-});
+      const randomY = Math.random() *
+
 
 
