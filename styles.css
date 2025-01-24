@@ -84,16 +84,9 @@ body {
     pointer-events: none; /* Kullanıcı tıklamaları engellenmesin */
 }
 
-.heart {
-    font-size: 2em;
-    animation: confetti 3s ease-in-out infinite;
-}
-
-/* Balonları küçültüyoruz */
-.balloon {
-    width: 30px;   /* Küçültülmüş balon genişliği */
-    height: 30px;  /* Küçültülmüş balon yüksekliği */
-    margin: 10px;
+.heart, .balloon {
+    position: absolute;
+    z-index: 10;
     opacity: 1;
     animation: float 5s forwards, confetti 3s ease-in-out infinite;
 }
@@ -124,6 +117,17 @@ body {
         transform: translate(var(--random-x), var(--random-y));
         opacity: 0;
     }
+}
+
+/* Konfeti öğeleri rastgele pozisyonlarda dağılacak */
+.heart {
+    font-size: 2em;
+}
+
+.balloon {
+    width: 100px;
+    height: auto;
+    margin: 10px;
 }
 
 /* Bu sınıf sadece gizli öğeleri gizlemek için */
