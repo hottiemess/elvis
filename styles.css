@@ -1,142 +1,23 @@
-/* Genel vücut stili */
-body {
-  font-family: 'Dancing Script', cursive;
-  background-color: #000000; /* Başlangıçta siyah arka plan */
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  text-align: center;
-  transition: background 1s ease; /* Arka plan değişimi için animasyon */
-}
-
-/* GIF'in konumu */
-#gif-section {
-  position: relative;
-}
-
-/* GIF boyutu ve hareketi */
-#birthday-gif {
-  width: 200px;
-  height: auto;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  z-index: 1;
-  animation: moveGif 16s infinite linear;
-}
-
-/* GIF hareketi */
-@keyframes moveGif {
-  0% {
-    transform: translateX(-200px);
-  }
-  25% {
-    transform: translateX(100vw);
-  }
-  50% {
-    transform: translateX(-200px);
-  }
-  75% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-200px);
-  }
-}
-
-/* Yazı stili */
-#birthday-message {
-  display: none;
-  margin-top: 20px;
-  font-size: 3em;
-  font-family: 'Dancing Script', cursive;
-  color: #ff1493;
-  font-style: italic;
-  text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
-  animation: glow 1.5s ease-in-out infinite alternate;
-  z-index: 10;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 90%;
-}
-
-/* Parlama animasyonu */
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
-  }
-  100% {
-    text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493;
-  }
-}
-
-/* Kalp animasyonu */
-#hearts {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5; /* Kalpleri yazının altında tutmak için */
-}
-
+/* Kalp stilini güncelleme */
 .heart {
   position: absolute;
-  font-size: 3em;
-  opacity: 0.6; /* Kalpleri biraz şeffaf yapıyoruz */
-  animation: float 5s forwards, confetti 3s ease-in-out infinite;
-}
-
-/* Kalplerin süzülmesi */
-@keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-50px) scale(1.2);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(100vh) scale(0.5);
-    opacity: 0;
-  }
-}
-
-/* Konfeti hareketi */
-@keyframes confetti {
-  0% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(var(--random-x), var(--random-y));
-    opacity: 0;
-  }
-}
-
-/* Konfeti ve kalp dağılma efektleri */
-#hearts .heart {
-  position: absolute;
-  top: 0;
-  left: 0;
   font-size: 2em;
   animation: confetti 3s ease-in-out infinite;
+  opacity: 0;
+  animation-delay: 1s; /* Rastgele gecikmeler */
 }
 
-/* Balloon ve diğer animasyonlarla uyumlu */
-.balloon {
-  position: absolute;
-  z-index: 10;
-  opacity: 1;
-  animation: float 5s forwards, confetti 3s ease-in-out infinite;
+/* Konfeti animasyonu ile kalpleri ekranın her yerine yayma */
+@keyframes confetti {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--random-x), var(--random-y)) scale(0.5); /* X ve Y rastgele yönler */
+  }
 }
+
 
 
