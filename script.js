@@ -1,17 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // GIF'e tıklama olayı
   const gif = document.getElementById("birthday-gif");
   const birthdayMessage = document.getElementById("birthday-message");
-  const music = document.getElementById("birthday-music");
+  const birthdayMusic = document.getElementById("birthday-music"); // Müzik elementini alıyoruz
 
   // GIF'e tıklandığında
   gif.addEventListener("click", function () {
     // Mesaj ve kalpleri göster
     birthdayMessage.style.display = "block";
     
-    // Müziği başlat
-    music.play();
-
+    // Müzik çalmaya başla
+    birthdayMusic.play();
+    
     // GIF'i değiştir
     gif.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzk5NXlmZW83Yjl1NWFtYzZlaDBrbWxxMjMwM2FwazFlMGZwN2czayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7n91oN4DySTNaNihfn/giphy.gif";
     
