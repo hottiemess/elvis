@@ -52,7 +52,7 @@ body {
 #birthday-message {
   display: none;
   margin-top: 20px;
-  font-size: 1.5em; /* Font boyutunu küçültüyoruz */
+  font-size: 1.7em; /* Font boyutunu biraz büyütüyoruz */
   font-family: 'Dancing Script', cursive; /* Süslü, eğik bir yazı tipi */
   color: #ff1493; /* Tatlı bir pembe rengi */
   font-style: italic; /* Yazıyı eğik yapmak için */
