@@ -145,9 +145,3 @@ body {
 }
 
 
-
-/* Bu sınıf sadece gizli öğeleri gizlemek için */
-.hidden {
-  display: none;
-}
-
