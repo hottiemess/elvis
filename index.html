@@ -29,12 +29,11 @@
   </section>
 
   <section id="music-section">
-    <!-- SoundCloud Embed Code with autoplay disabled -->
-    <iframe id="soundcloud-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1217475433&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
-    <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif; font-weight: 100;">
-      <a href="https://soundcloud.com/elvissonymusic" title="Elvis Presley" target="_blank" style="color: #cccccc; text-decoration: none;">Elvis Presley</a> · 
-      <a href="https://soundcloud.com/elvissonymusic/cant-help-falling-in-953786220" title="Can't Help Falling In Love" target="_blank" style="color: #cccccc; text-decoration: none;">Can't Help Falling In Love</a>
-    </div>
+    <!-- Google Drive Embed (Audio) -->
+    <audio id="music-player" controls>
+      <source src="https://drive.google.com/uc?export=download&id=1Ppun3Y0qhsV3yiVrg6HoEbDWj_EYM764" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
   </section>
 
   <footer>
@@ -43,20 +42,17 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
         const gif = document.getElementById("birthday-gif");
-        const soundcloudPlayer = document.getElementById("soundcloud-player");
+        const musicPlayer = document.getElementById("music-player");
 
         gif.addEventListener("click", function () {
-            // SoundCloud player'ı üzerinden müziği başlat
-            let src = soundcloudPlayer.src;
-            if (src.indexOf("auto_play=false") > -1) {
-                src = src.replace("auto_play=false", "auto_play=true");
-                soundcloudPlayer.src = src;
-            }
+            // GIF'e tıklandığında müzik başlasın
+            musicPlayer.play();
         });
     });
   </script>
 </body>
 </html>
+
 
 
 
