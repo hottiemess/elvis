@@ -11,14 +11,15 @@ body {
     height: 100vh;           /* Yüksekliği ekran boyutunda tutuyoruz */
     overflow: hidden;        /* Taşan öğeleri gizliyoruz */
     text-align: center;      /* Yazıların ortalanması için */
-  }
-  
-  /* GIF'in konumu ve boyutu */
-  #gif-section {
+}
+
+/* GIF'in konumu ve boyutu */
+#gif-section {
     position: relative;      /* GIF ve animasyonlar bu bölüme ekleniyor */
-  }
-  
-  #birthday-gif {
+}
+
+/* GIF stilini ayarlıyoruz */
+#birthday-gif {
     width: 200px; /* GIF boyutunu küçültüyoruz */
     height: auto;
     cursor: pointer;
@@ -27,10 +28,10 @@ body {
     position: absolute;
     z-index: 1;
     animation: moveGif 16s infinite linear; /* GIF'in hareket animasyonu daha yavaş yapıldı */
-  }
-  
-  /* GIF'in sağa sola çarparak hareketi */
-  @keyframes moveGif {
+}
+
+/* GIF'in sağa sola çarparak hareketi */
+@keyframes moveGif {
     0% {
       transform: translateX(-200px); /* Başlangıçta sol kenarda */
     }
@@ -46,10 +47,10 @@ body {
     100% {
       transform: translateX(-200px); /* Sol kenara geri dönme */
     }
-  }
-  
-  /* Yazının stilini süslü, simli ve parlak yapalım */
-  #birthday-message {
+}
+
+/* Yazının stilini süslü, simli ve parlak yapalım */
+#birthday-message {
     display: none;
     margin-top: 20px;
     font-size: 3em;
@@ -62,37 +63,37 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     max-width: 90%; /* Yazıyı ekranın kenarlarına çok yakın yapmıyoruz */
-  }
-  
-  /* Yazıya süslü ve simli animasyon ekleyelim */
-  @keyframes glow {
+}
+
+/* Yazıya süslü ve simli animasyon ekleyelim */
+@keyframes glow {
     0% {
       text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
     }
     100% {
       text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493;
     }
-  }
-  
-  /* Kalp ve balonların konumlanması */
-  #hearts, #balloons {
+}
+
+/* Kalp ve balonların konumlanması */
+#hearts, #balloons {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none; /* Kullanıcı tıklamaları engellenmesin */
-  }
-  
-  .balloon, .heart {
+}
+
+.heart, .balloon {
     position: absolute;
     z-index: 10;
     opacity: 1;
     animation: float 5s forwards, confetti 3s ease-in-out infinite;
-  }
-  
-  /* Balonlar ve kalplerin hareket etmesini sağlayan animasyonlar */
-  @keyframes float {
+}
+
+/* Balonlar ve kalplerin hareket etmesini sağlayan animasyonlar */
+@keyframes float {
     0% {
       transform: translateY(0) scale(1);
       opacity: 1;
@@ -105,10 +106,10 @@ body {
       transform: translateY(100vh) scale(0.5);
       opacity: 0;
     }
-  }
-  
-  /* Konfeti gibi dağılmalar */
-  @keyframes confetti {
+}
+
+/* Konfeti gibi dağılmalar */
+@keyframes confetti {
     0% {
       transform: translate(0, 0);
       opacity: 1;
@@ -117,26 +118,43 @@ body {
       transform: translate(var(--random-x), var(--random-y));
       opacity: 0;
     }
-  }
-  
-  .heart, .balloon {
+}
+
+.heart, .balloon {
     animation: confetti 3s ease-in-out infinite;
-  }
-  
-  /* Konfeti öğeleri rastgele pozisyonlarda dağılacak */
-  .heart {
+}
+
+/* Konfeti öğeleri rastgele pozisyonlarda dağılacak */
+.heart {
     font-size: 2em;
     animation: confetti 3s ease-in-out infinite;
-  }
-  
-  .balloon {
+}
+
+.balloon {
     width: 100px;
     height: auto;
     margin: 10px;
-  }
-  
-  /* Bu sınıf sadece gizli öğeleri gizlemek için */
-  .hidden {
+}
+
+/* Bu sınıf sadece gizli öğeleri gizlemek için */
+.hidden {
     display: none;
-  }
+}
+
+/* SoundCloud iframe'ını gizleme ve görünmeyen alanda tutma */
+iframe {
+    position: absolute;
+    top: -9999px;  /* iframe'ı ekran dışında tutuyoruz */
+    left: -9999px;
+    width: 0;
+    height: 0;
+}
+
+/* Mobil cihazlar için gif tıklama ile müzik çalma */
+@media (max-width: 768px) {
+    #birthday-gif {
+        width: 150px; /* Mobilde gif boyutunu küçültüyoruz */
+    }
+}
+
   
