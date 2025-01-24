@@ -91,8 +91,8 @@ body {
 
 /* Balonları küçültüyoruz */
 .balloon {
-    width: 50px;   /* Yeni balon genişliği */
-    height: 50px;  /* Yeni balon yüksekliği */
+    width: 30px;   /* Küçültülmüş balon genişliği */
+    height: 30px;  /* Küçültülmüş balon yüksekliği */
     margin: 10px;
     opacity: 1;
     animation: float 5s forwards, confetti 3s ease-in-out infinite;
@@ -131,12 +131,13 @@ body {
     display: none;
 }
 
-/* SoundCloud player'ını yazının altına yerleştiriyoruz */
+/* SoundCloud player'ını ekranın en altına taşıyoruz */
 #music-section {
-    position: absolute;
-    bottom: 10px; /* Alt kısma biraz mesafe bırakıyoruz */
+    position: fixed; /* Sabit konumda kalması için fixed */
+    bottom: 0; /* Ekranın en altına yerleşiyor */
     width: 100%;
     text-align: center;
+    z-index: 100; /* Üstteki öğelerin altında olmasını sağlıyoruz */
 }
 
       transform: translate(var(--random-x), var(--random-y));
