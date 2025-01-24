@@ -52,7 +52,7 @@ body {
 #birthday-message {
     display: none;
     margin-top: 20px;
-    font-size: 3em;
+    font-size: 2.5em;  /* Yazıyı biraz küçülttük */
     font-family: 'Dancing Script', cursive; /* Süslü, eğik bir yazı tipi */
     color: #ff1493; /* Tatlı bir pembe rengi */
     font-style: italic; /* Yazıyı eğik yapmak için */
@@ -62,6 +62,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     max-width: 90%; /* Yazıyı ekranın kenarlarına çok yakın yapmıyoruz */
+    margin-bottom: 40px;
 }
 
 /* Yazıya süslü ve simli animasyon ekleyelim */
@@ -133,6 +134,11 @@ body {
     width: 100px;
     height: auto;
     margin: 10px;
+}
+
+/* Bu sınıf sadece gizli öğeleri gizlemek için */
+.hidden {
+    display: none;
 }
 
 /* Bu sınıf sadece gizli öğeleri gizlemek için */
