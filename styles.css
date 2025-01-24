@@ -1,143 +1,137 @@
 /* Genel vücut stili */
 body {
-    font-family: 'Dancing Script', cursive; /* Dancing Script fontu */
-    background-color: #000000; /* Siyah arkaplan */
-    color: #fff; /* Yazı rengini beyaz yapıyoruz */
+    font-family: 'Dancing Script', cursive, sans-serif; /* Dancing Script fontu */
+    background-color: #000000;
+    color: #fff;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;  /* Yatayda ortalama */
-    align-items: center;     /* Dikeyde ortalama */
-    height: 100vh;           /* Yüksekliği ekran boyutunda tutuyoruz */
-    overflow: hidden;        /* Taşan öğeleri gizliyoruz */
-    text-align: center;      /* Yazıların ortalanması için */
-  }
-  
-  /* GIF'in konumu ve boyutu */
-  #gif-section {
-    position: relative;      /* GIF ve animasyonlar bu bölüme ekleniyor */
-  }
-  
-  #birthday-gif {
-    width: 200px; /* GIF boyutunu küçültüyoruz */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* GIF'in konumu ve boyutu */
+#gif-section {
+    position: relative;
+}
+
+#birthday-gif {
+    width: 200px;
     height: auto;
     cursor: pointer;
     display: block;
     margin: 0 auto;
     position: absolute;
     z-index: 1;
-    animation: moveGif 16s infinite linear; /* GIF'in hareket animasyonu daha yavaş yapıldı */
-  }
-  
-  /* GIF'in sağa sola çarparak hareketi */
-  @keyframes moveGif {
-    0% {
-      transform: translateX(-200px); /* Başlangıçta sol kenarda */
-    }
-    25% {
-      transform: translateX(100vw); /* Sağ tarafa doğru hareket */
-    }
-    50% {
-      transform: translateX(-200px); /* Sol kenara geri dönme */
-    }
-    75% {
-      transform: translateX(100vw); /* Tekrar sağ tarafa doğru hareket */
-    }
-    100% {
-      transform: translateX(-200px); /* Sol kenara geri dönme */
-    }
-  }
-  
-  /* Yazının stilini süslü, simli ve parlak yapalım */
-  #birthday-message {
+    animation: moveGif 16s infinite linear;
+}
+
+/* Yazı stilini süslü, simli ve parlak yapalım */
+#birthday-message {
     display: none;
     margin-top: 20px;
     font-size: 3em;
-    font-family: 'Dancing Script', cursive; /* Süslü, eğik bir yazı tipi */
-    color: #ff1493; /* Tatlı bir pembe rengi */
-    font-style: italic; /* Yazıyı eğik yapmak için */
-    text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493; /* Parlaklık ve simli etki */
-    animation: glow 1.5s ease-in-out infinite alternate; /* Parlama animasyonu */
-    z-index: 10; /* Yazının üstte kalmasını sağlamak için z-index */
+    font-family: 'Dancing Script', cursive;
+    color: #ff1493;
+    font-style: italic;
+    text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    z-index: 10;
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 90%; /* Yazıyı ekranın kenarlarına çok yakın yapmıyoruz */
-  }
-  
-  /* Yazıya süslü ve simli animasyon ekleyelim */
-  @keyframes glow {
+    max-width: 90%;
+}
+
+@keyframes glow {
     0% {
-      text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
+        text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
     }
     100% {
-      text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493;
+        text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493;
     }
-  }
-  
-  /* Kalp ve balonların konumlanması */
-  #hearts, #balloons {
+}
+
+/* Kalp ve balonların konumlanması */
+#hearts, #balloons {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Kullanıcı tıklamaları engellenmesin */
-  }
-  
-  .balloon, .heart {
+    pointer-events: none;
+}
+
+.heart, .balloon {
     position: absolute;
     z-index: 10;
     opacity: 1;
     animation: float 5s forwards, confetti 3s ease-in-out infinite;
-  }
-  
-  /* Balonlar ve kalplerin hareket etmesini sağlayan animasyonlar */
-  @keyframes float {
+}
+
+@keyframes float {
     0% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
     50% {
-      transform: translateY(-50px) scale(1.2);
-      opacity: 0.8;
+        transform: translateY(-50px) scale(1.2);
+        opacity: 0.8;
     }
     100% {
-      transform: translateY(100vh) scale(0.5);
-      opacity: 0;
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
     }
-  }
-  
-  /* Konfeti gibi dağılmalar */
-  @keyframes confetti {
+}
+
+@keyframes confetti {
     0% {
-      transform: translate(0, 0);
-      opacity: 1;
+        transform: translate(0, 0);
+        opacity: 1;
     }
     100% {
-      transform: translate(var(--random-x), var(--random-y));
-      opacity: 0;
+        transform: translate(var(--random-x), var(--random-y));
+        opacity: 0;
     }
-  }
-  
-  .heart, .balloon {
-    animation: confetti 3s ease-in-out infinite;
-  }
-  
-  /* Konfeti öğeleri rastgele pozisyonlarda dağılacak */
-  .heart {
-    font-size: 2em;
-    animation: confetti 3s ease-in-out infinite;
-  }
-  
-  .balloon {
-    width: 100px;
-    height: auto;
-    margin: 10px;
-  }
-  
-  /* Bu sınıf sadece gizli öğeleri gizlemek için */
-  .hidden {
+}
+
+/* SoundCloud ve Elvis yazıları */
+#elvis-info {
+    display: block;
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 50vh; /* Yazıyı ekranın altına kaydırıyoruz */
+    text-align: center;
+    font-family: 'Dancing Script', cursive, sans-serif; /* Yazı tipi burada da uygulanıyor */
+}
+
+#elvis-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+#elvis-info a:hover {
+    color: #ff1493;
+}
+
+/* Diğer stil ve animasyonlar */
+.hidden {
     display: none;
-  }
+}
+
+#birthday-message {
+    display: none;
+    font-size: 3em;
+    font-family: 'Dancing Script', cursive;
+    color: #ff1493;
+    font-style: italic;
+    text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
   
   
