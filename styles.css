@@ -1,6 +1,6 @@
 /* Genel vücut stili */
 body {
-  font-family: 'Dancing Script', cursive; /* Dancing Script fontu */
+  font-family: 'Dancing Script', cursive;
   background-color: #000000;
   color: #fff;
   margin: 0;
@@ -11,6 +11,7 @@ body {
   height: 100vh;
   overflow: hidden;
   text-align: center;
+  position: relative;
 }
 
 /* GIF'in konumu ve boyutu */
@@ -26,7 +27,7 @@ body {
   margin: 0 auto;
   position: absolute;
   z-index: 1;
-  animation: moveGif 16s infinite linear; /* GIF'in hareket animasyonu daha yavaş yapıldı */
+  animation: moveGif 16s infinite linear;
 }
 
 /* GIF'in sağa sola çarparak hareketi */
@@ -53,9 +54,9 @@ body {
   display: none;
   margin-top: 20px;
   font-size: 2.5em;
-  font-family: 'Dancing Script', cursive; /* Dancing Script fontu */
-  color: #ff1493; /* Tatlı bir pembe rengi */
-  font-style: italic; /* Yazıyı eğik yapmak için */
+  font-family: 'Dancing Script', cursive;
+  color: #ff1493;
+  font-style: italic;
   text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
   animation: glow 1.5s ease-in-out infinite alternate;
   z-index: 10;
@@ -64,7 +65,6 @@ body {
   max-width: 90%;
 }
 
-/* Yazıya süslü ve simli animasyon */
 @keyframes glow {
   0% {
     text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
@@ -91,32 +91,35 @@ body {
   animation: float 5s forwards, confetti 3s ease-in-out infinite;
 }
 
-/* Balonlar ve kalplerin hareket etmesini sağlayan animasyonlar */
-@keyframes float {
+/* Havai fişek animasyonu */
+@keyframes fireworks {
   0% {
-    transform: translateY(0) scale(1);
+    transform: scale(0);
     opacity: 1;
   }
-  50% {
-    transform: translateY(-50px) scale(1.2);
-    opacity: 0.8;
-  }
   100% {
-    transform: translateY(100vh) scale(0.5);
+    transform: scale(3);
     opacity: 0;
   }
 }
 
-/* Konfeti gibi dağılmalar */
-@keyframes confetti {
-  0% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(var(--random-x), var(--random-y));
-    opacity: 0;
-  }
+/* Havai fişekler */
+.firework {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 0, 0.7);
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+  animation: fireworks 1.5s ease-out infinite;
+}
+
+.firework:nth-child(odd) {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.firework:nth-child(even) {
+  background-color: rgba(0, 255, 0, 0.7);
 }
 
 /* SoundCloud iframe kısmı */
@@ -124,9 +127,15 @@ iframe {
   width: 100%;
   height: 100px;
   border: none;
-  max-width: 500px; /* Popup boyutunu küçültüyoruz */
+  max-width: 500px;
   margin: 0 auto;
 }
+
+/* Bu sınıf sadece gizli öğeleri gizlemek için */
+.hidden {
+  display: none;
+}
+
 
 /* Bu sınıf sadece gizli öğeleri gizlemek için */
 .hidden {
