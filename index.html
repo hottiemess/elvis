@@ -28,8 +28,9 @@
     </div>
   </section>
 
+  <!-- Google Drive müziğini ekleyelim -->
   <section id="music-section">
-    <!-- Google Drive Embed (Audio) -->
+    <!-- Google Drive'dan müzik dosyasını yerleştiriyoruz -->
     <audio id="music-player" controls>
       <source src="https://drive.google.com/uc?export=download&id=1Ppun3Y0qhsV3yiVrg6HoEbDWj_EYM764" type="audio/mp3">
       Your browser does not support the audio element.
@@ -41,17 +42,18 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const gif = document.getElementById("birthday-gif");
-        const musicPlayer = document.getElementById("music-player");
+      const gif = document.getElementById("birthday-gif");
+      const musicPlayer = document.getElementById("music-player");
 
-        gif.addEventListener("click", function () {
-            // GIF'e tıklandığında müzik başlasın
-            musicPlayer.play();
-        });
+      // GIF'e tıklandığında müziği başlat
+      gif.addEventListener("click", function () {
+        musicPlayer.play();
+      });
     });
   </script>
 </body>
 </html>
+
 
 
 
