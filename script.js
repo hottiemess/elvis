@@ -1,35 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
   const gif = document.getElementById("birthday-gif");
   const birthdayMessage = document.getElementById("birthday-message");
-  const soundCloudPlayer = document.querySelector("iframe"); // SoundCloud iframe'ini seçiyoruz
+  const heartsContainer = document.getElementById("hearts");
 
   // GIF'e tıklama olayı
   gif.addEventListener("click", function () {
     // Mesaj ve kalpleri göster
     birthdayMessage.style.display = "block";
 
-    // GIF'i değiştir
-    gif.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzk5NXlmZW83Yjl1NWFtYzZlaDBrbWxxMjMwM2FwazFlMGZwN2czayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7n91oN4DySTNaNihfn/giphy.gif";
+    // Kalpleri ekranın her yerine yerleştir
+    for (let i = 0; i < 50; i++) {  // 50 tane kalp ekle
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤️";
+      heart.style.left = `${Math.random() * 100}vw`; // X konumunu rastgele
+      heart.style.animationDuration = `${Math.random() * 5 + 3}s`; // Rastgele hız
+      heart.style.fontSize = `${Math.random() * 3 + 2}em`; // Rastgele boyut
+      heartsContainer.appendChild(heart);
+    }
 
     // SoundCloud müziğini başlat
-    soundCloudPlayer.contentWindow.postMessage('{"method":"play"}', '*'); // Müzik başlatılır
-
-    // Kalpleri ve balonları rastgele hareket ettir
-    let heartElements = document.querySelectorAll(".heart");
-    heartElements.forEach(heart => {
-      const randomX = Math.random() * 200 - 100;
-      const randomY = Math.random() * 200 - 100;
-      heart.style.setProperty('--random-x', `${randomX}px`);
-      heart.style.setProperty('--random-y', `${randomY}px`);
-    });
-
-    let balloonElements = document.querySelectorAll(".balloon");
-    balloonElements.forEach(balloon => {
-      const randomX = Math.random() * 200 - 100;
-      const randomY = Math.random() * 200 - 100;
-      balloon.style.setProperty('--random-x', `${randomX}px`);
-      balloon.style.setProperty('--random-y', `${randomY}px`);
-    });
+    const soundCloudPlayer = document.querySelector("iframe");
+    soundCloudPlayer.contentWindow.postMessage('{"method":"play"}', '*');
   });
 });
 
