@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // SoundCloud müziğini başlat
     soundCloudPlayer.contentWindow.postMessage('{"method":"play"}', '*'); // Müzik başlatılır
 
-    // Kalpleri ve balonları rastgele hareket ettir
+    // Kalpleri rastgele hareket ettir
     let heartElements = document.querySelectorAll(".heart");
     heartElements.forEach(heart => {
       const randomX = Math.random() * 200 - 100;
