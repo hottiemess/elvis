@@ -1,6 +1,6 @@
 /* Genel vücut stili */
 body {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive, sans-serif; /* Dancing Script fontu */
     background-color: #000000;
     color: #fff;
     margin: 0;
@@ -29,51 +29,7 @@ body {
     animation: moveGif 16s infinite linear;
 }
 
-/* SoundCloud iframe ve yazı konumlandırma */
-#music-section {
-  position: relative;
-  width: 100%;
-}
-
-#elvis-info {
-    display: block;
-    color: #fff;
-    font-size: 1.2em;
-    margin-top: 20px;
-    text-align: center;
-}
-
-#elvis-info a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
-}
-
-/* Yazıların hover efekti */
-#elvis-info a:hover {
-    color: #ff1493;
-}
-
-/* Diğer animasyon ve stil düzenlemeleri */
-@keyframes moveGif {
-    0% {
-        transform: translateX(-200px);
-    }
-    25% {
-        transform: translateX(100vw);
-    }
-    50% {
-        transform: translateX(-200px);
-    }
-    75% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(-200px);
-    }
-}
-
+/* Yazı stilini süslü, simli ve parlak yapalım */
 #birthday-message {
     display: none;
     margin-top: 20px;
@@ -98,7 +54,7 @@ body {
     }
 }
 
-/* Kalp ve balon animasyonları */
+/* Kalp ve balonların konumlanması */
 #hearts, #balloons {
     position: absolute;
     top: 0;
@@ -141,20 +97,38 @@ body {
     }
 }
 
-.heart {
-    font-size: 2em;
-    animation: confetti 3s ease-in-out infinite;
+/* SoundCloud ve Elvis yazıları */
+#elvis-info {
+    display: block;
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 50vh; /* Yazıyı ekranın altına kaydırıyoruz */
+    text-align: center;
+    font-family: 'Dancing Script', cursive, sans-serif; /* Yazı tipi burada da uygulanıyor */
 }
 
-.balloon {
-    width: 100px;
-    height: auto;
-    margin: 10px;
+#elvis-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
 }
 
+#elvis-info a:hover {
+    color: #ff1493;
+}
+
+/* Diğer stil ve animasyonlar */
 .hidden {
     display: none;
 }
-``
+
+#birthday-message {
+    display: none;
+    font-size: 3em;
+    font-family: 'Dancing Script', cursive;
+    color: #ff1493;
+    font-style: italic;
+    text-shadow: 0
 
   
