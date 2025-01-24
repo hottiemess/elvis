@@ -1,23 +1,101 @@
-/* Kalp stilini güncelleme */
+/* Genel vücut stili */
+body {
+    font-family: 'Dancing Script', cursive; /* Dancing Script fontu */
+    background-color: #000000; /* Siyah arkaplan */
+    color: #fff; /* Yazı rengini beyaz yapıyoruz */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;  /* Yatayda ortalama */
+    align-items: center;     /* Dikeyde ortalama */
+    height: 100vh;           /* Yüksekliği ekran boyutunda tutuyoruz */
+    overflow: hidden;        /* Taşan öğeleri gizliyoruz */
+    text-align: center;      /* Yazıların ortalanması için */
+}
+
+/* GIF'in konumu ve boyutu */
+#gif-section {
+    position: relative;      /* GIF ve animasyonlar bu bölüme ekleniyor */
+}
+
+/* GIF'in boyutunu ve hareketini ayarlıyoruz */
+#birthday-gif {
+    width: 200px; /* GIF boyutunu küçültüyoruz */
+    height: auto;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    animation: moveGif 16s infinite linear; /* GIF'in hareket animasyonu */
+}
+
+/* GIF'in sağa sola çarparak hareketi */
+@keyframes moveGif {
+    0% {
+        transform: translateX(-200px); /* Başlangıçta sol kenarda */
+    }
+    25% {
+        transform: translateX(100vw); /* Sağ tarafa doğru hareket */
+    }
+    50% {
+        transform: translateX(-200px); /* Sol kenara geri dönme */
+    }
+    75% {
+        transform: translateX(100vw); /* Tekrar sağ tarafa doğru hareket */
+    }
+    100% {
+        transform: translateX(-200px); /* Sol kenara geri dönme */
+    }
+}
+
+/* Yazının stilini süslü, simli ve parlak yapalım */
+#birthday-message {
+    display: none;
+    margin-top: 20px;
+    font-size: 3em;
+    font-family: 'Dancing Script', cursive; /* Süslü, eğik bir yazı tipi */
+    color: #ff1493; /* Tatlı bir pembe rengi */
+    font-style: italic; /* Yazıyı eğik yapmak için */
+    text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493; /* Parlaklık ve simli etki */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Parlama animasyonu */
+    z-index: 10; /* Yazının üstte kalmasını sağlamak için z-index */
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 90%; /* Yazıyı ekranın kenarlarına çok yakın yapmıyoruz */
+}
+
+/* Yazıya süslü ve simli animasyon ekleyelim */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 8px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493;
+    }
+}
+
+/* Kalp ve balonların konumlanması */
+#hearts, #balloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Kullanıcı tıklamaları engellenmesin */
+}
+
+/* Kalp animasyonu için rastgele hareket */
 .heart {
-  position: absolute;
-  font-size: 2em;
-  animation: confetti 3s ease-in-out infinite;
-  opacity: 0;
-  animation-delay: 1s; /* Rastgele gecikmeler */
+    position: absolute;
+    font-size: 2em;
+    opacity: 0;
+    animation: confetti 3s ease-in-out infinite;
+    animation-delay: 1s; /* Kalplerin rastgele animasyon başlaması */
 }
 
 /* Konfeti animasyonu ile kalpleri ekranın her yerine yayma */
 @keyframes confetti {
-  0% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(var(--random-x), var(--random-y)) scale(0.5); /* X ve Y rastgele yönler */
-  }
-}
-
+    
 
 
