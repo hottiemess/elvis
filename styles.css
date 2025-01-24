@@ -11,6 +11,7 @@ body {
   height: 100vh;           /* Yüksekliği ekran boyutunda tutuyoruz */
   overflow: hidden;        /* Taşan öğeleri gizliyoruz */
   text-align: center;      /* Yazıların ortalanması için */
+  position: relative;
 }
 
 /* GIF'in konumu ve boyutu */
@@ -62,6 +63,10 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   max-width: 90%; /* Yazıyı ekranın kenarlarına çok yakın yapmıyoruz */
+  position: absolute;
+  top: 50%; /* Yatayda ortalanacak şekilde */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Tam olarak ortalama */
 }
 
 /* Yazıya süslü ve simli animasyon ekleyelim */
@@ -72,6 +77,14 @@ body {
   100% {
     text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493, 0 0 60px #ff1493;
   }
+}
+
+/* SoundCloud reklamı */
+#soundcloud-ad {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Sağ üst köşeye yerleştirelim */
+  z-index: 20;
 }
 
 /* Kalp ve balonların konumlanması */
